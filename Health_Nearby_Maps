@@ -1,0 +1,51 @@
+{
+  "responseId": "1d87522b-42d8-4ea3-94f1-57c6bc210271",
+  "queryResult": {
+    "queryText": "nearby hospitals",
+    "parameters": {},
+    "allRequiredParamsPresent": true,
+    "fulfillmentText": "Here are some hospitals for women",
+    "fulfillmentMessages": [
+      {
+        "platform": "ACTIONS_ON_GOOGLE",
+        "simpleResponses": {
+          "simpleResponses": [
+            {
+              "textToSpeech": "Here are some hospitals for women"
+            }
+          ]
+        }
+      },
+      {
+        "platform": "ACTIONS_ON_GOOGLE",
+        "linkOutSuggestion": {
+          "destinationName": "Hospitals",
+          "uri": "https://www.google.com/maps/d/viewer?mid=1QbjUbjmzUCv57UwTsWV-ovXddnBErEK3&ll=10.021492228367066%2C76.33309220000001&z=12"
+        }
+      },
+      {
+        "text": {
+          "text": [
+            "Here are some hospitals for women"
+          ]
+        }
+      }
+    ],
+    "outputContexts": [
+      {
+        "name": "projects/srishti-71079/agent/sessions/79ff1ef1-15c5-0f18-d457-52e501920dd2/contexts/health-followup",
+        "lifespanCount": 1
+      },
+      {
+        "name": "projects/srishti-71079/agent/sessions/79ff1ef1-15c5-0f18-d457-52e501920dd2/contexts/healthhosp-followup",
+        "lifespanCount": 2
+      }
+    ],
+    "intent": {
+      "name": "projects/srishti-71079/agent/intents/cfb2537f-e60a-45ea-a8b2-b61bf87b8d93",
+      "displayName": "health.hosp"
+    },
+    "intentDetectionConfidence": 0.96,
+    "languageCode": "en"
+  }
+}
