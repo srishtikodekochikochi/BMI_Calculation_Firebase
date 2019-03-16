@@ -1,0 +1,72 @@
+
+'use strict';
+ 
+const functions = require('firebase-functions');
+const admin = require('firebase-admin');
+const {WebhookClient} = require('dialogflow-fulfillment');
+const {Card, Suggestion} = require('dialogflow-fulfillment');
+
+admin.initializeApp({
+	credential: admin.credential.applicationDefault(),
+  	databaseURL: 'ws://srishti-71079.firebaseio.com/'
+});
+ 
+process.env.DEBUG = 'dialogflow:debug'; // enables lib debugging statements
+ 
+exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, response) => {
+  const agent = new WebhookClient({ request, response });
+  console.log('Dialogflow Request headers: ' + JSON.stringify(request.headers));
+  console.log('Dialogflow Request body: ' + JSON.stringify(request.body));
+ 
+  function welcome(agent) {
+    agent.add(`Welcome to my agent!`);
+  }
+ 
+  function fallback(agent) {
+    agent.add(`I didn't understand`);
+    agent.add(`I'm sorry, can you try again?`);
+  }
+
+  function handleSaveToDB(agent){
+   // const height = agent.parameters.height;
+    //const weight = agent.parameters.weight;
+ 
+    return admin.database().ref('user2').set({        //write into database
+      	name: 'Aisha Swami',
+      	age:  19,
+      	weight: 48,
+      	height: 168
+    });
+  }
+  
+ function handleReadFromDB(agent){
+    var bmi;
+    return admin.database().ref('user2').once('value').then((snapshot) =>{ 
+    const hei = snapshot.child('height').val(); // to read height stored in data base
+    const wei = snapshot.child('weight').val();
+      
+    if(hei !==null){
+      	agent.add(`The height is ${hei}`);
+     }
+     if(wei !==null){
+      	agent.add(`The weight is ${wei}`);
+     }
+      bmi= wei/((hei/100)*(hei/100)); //body mass index calculation
+      bmi= Number((bmi).toFixed(1));
+      agent.add(`The BMI IS :${bmi}`);
+      if(bmi<18.7)
+        agent.add(`Under Nourished!!`);
+      else
+        agent.add(`BMI Maintained`);
+        
+    });
+  } 
+
+  
+  let intentMap = new Map();
+  intentMap.set('Default Welcome Intent', welcome);
+  intentMap.set('Default Fallback Intent', fallback);
+  intentMap.set('SaveToDB', handleSaveToDB);
+  intentMap.set('ReadFromDB', handleReadFromDB);
+  agent.handleRequest(intentMap);
+});
