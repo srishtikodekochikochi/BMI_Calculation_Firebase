@@ -1,0 +1,34 @@
+{
+  "responseId": "46a4d0a9-fbe9-492d-88a8-6faa7d5bd190",
+  "queryResult": {
+    "queryText": "education",
+    "parameters": {},
+    "allRequiredParamsPresent": true,
+    "fulfillmentText": "Select a subtopic: 1. Scholarships for women 2. Fields of study 3. Colleges Can you choose your option?",
+    "fulfillmentMessages": [
+      {
+        "text": {
+          "text": [
+            "Select a subtopic:  \n\n1. Scholarships for women \n2. Fields of study\n3. Colleges \n\nCan you choose your option?"
+          ]
+        }
+      }
+    ],
+    "outputContexts": [
+      {
+        "name": "projects/srishti-71079/agent/sessions/79ff1ef1-15c5-0f18-d457-52e501920dd2/contexts/useredu-followup",
+        "lifespanCount": 2,
+        "parameters": {
+          "number-sequence": "3",
+          "number-sequence.original": "3"
+        }
+      }
+    ],
+    "intent": {
+      "name": "projects/srishti-71079/agent/intents/fa037c17-fcae-4bba-b247-72ee8e309640",
+      "displayName": "user.edu"
+    },
+    "intentDetectionConfidence": 1,
+    "languageCode": "en"
+  }
+}
