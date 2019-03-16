@@ -1,0 +1,30 @@
+{
+  "responseId": "07d24d9b-6a20-4d9e-bab6-34a08832d522",
+  "queryResult": {
+    "queryText": "scholarships",
+    "parameters": {},
+    "allRequiredParamsPresent": true,
+    "fulfillmentText": "1. AICTE Pragati Scholarship Scheme 2. Begum Hazrat Mahal Scholarship Scheme 3. CBSE Single Girl Child Scholarship scheme 4. Swami Vivekananda Single Girl Child Scholarship Scheme 5. Lady Meherbai D. Tata Education Trust Scholarship Scheme Can you choose an option?",
+    "fulfillmentMessages": [
+      {
+        "text": {
+          "text": [
+            "1. AICTE Pragati Scholarship Scheme\n2. Begum Hazrat Mahal Scholarship Scheme\n3. CBSE Single Girl Child Scholarship scheme\n4. Swami Vivekananda Single Girl Child Scholarship Scheme\n5. Lady  Meherbai D. Tata Education Trust Scholarship Scheme\n\nCan you choose an option?"
+          ]
+        }
+      }
+    ],
+    "outputContexts": [
+      {
+        "name": "projects/srishti-71079/agent/sessions/79ff1ef1-15c5-0f18-d457-52e501920dd2/contexts/userscholar-followup",
+        "lifespanCount": 2
+      }
+    ],
+    "intent": {
+      "name": "projects/srishti-71079/agent/intents/07b1864e-081d-48eb-97ae-02c0923eb695",
+      "displayName": "user.scholar"
+    },
+    "intentDetectionConfidence": 1,
+    "languageCode": "en"
+  }
+}
