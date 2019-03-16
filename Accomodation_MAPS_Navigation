@@ -1,0 +1,51 @@
+{
+  "responseId": "551a9e65-90c4-4a65-9414-8135798f5d07",
+  "queryResult": {
+    "queryText": "accomodation",
+    "parameters": {},
+    "allRequiredParamsPresent": true,
+    "fulfillmentText": "How else can I help you?",
+    "fulfillmentMessages": [
+      {
+        "platform": "ACTIONS_ON_GOOGLE",
+        "simpleResponses": {
+          "simpleResponses": [
+            {
+              "textToSpeech": "How else can I help you?"
+            }
+          ]
+        }
+      },
+      {
+        "platform": "ACTIONS_ON_GOOGLE",
+        "linkOutSuggestion": {
+          "destinationName": "Hostels for women",
+          "uri": "https://www.google.com/maps/d/viewer?mid=1dfaPc-uewV01CcZIV7if6fYB-HKDuzE7&ll=9.99972269862289%2C76.29481069999997&z=13"
+        }
+      },
+      {
+        "text": {
+          "text": [
+            "How else can I help you?"
+          ]
+        }
+      }
+    ],
+    "outputContexts": [
+      {
+        "name": "projects/srishti-71079/agent/sessions/79ff1ef1-15c5-0f18-d457-52e501920dd2/contexts/healthhosp-followup",
+        "lifespanCount": 1
+      },
+      {
+        "name": "projects/srishti-71079/agent/sessions/79ff1ef1-15c5-0f18-d457-52e501920dd2/contexts/accomodation-followup",
+        "lifespanCount": 2
+      }
+    ],
+    "intent": {
+      "name": "projects/srishti-71079/agent/intents/4959b1b9-6d3d-41d4-9fd8-5e33baa1a650",
+      "displayName": "accomodation"
+    },
+    "intentDetectionConfidence": 1,
+    "languageCode": "en"
+  }
+}
